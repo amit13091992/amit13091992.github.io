@@ -24,7 +24,7 @@ I work across healthcare, FinTech, AI, education, and enterprise products, solvi
 ## 💼 Professional Tech Stack
 
 ### Mobile Development
-[![Mobile Stack](https://skillicons.dev/icons?i=react,expo,androidstudio&perline=3)](https://skillicons.dev)
+[![Mobile Stack](https://skillicons.dev/icons?i=react,androidstudio,apple,expo&perline=4)](https://skillicons.dev)
 
 - **React Native** — 6+ years building cross-platform mobile apps
 - **Expo** — Managed workflows and rapid iteration
@@ -79,46 +79,49 @@ I work across healthcare, FinTech, AI, education, and enterprise products, solvi
 
 ---
 
-## 🎯 Experience
+## 🏢 Work Experience
 
-### PurpleTalk India Pvt. Ltd. | Senior Analyst (2020 — Present)
-Led frontend architecture and development for customer-facing web and mobile applications.
+💼 **PurpleTalk India Pvt. Ltd.**
+Senior Analyst | 2020 — Present
 
-**Key Achievements:**
-- Architected real-time WebSocket and MQTT systems for live communication
-- Built responsive React Native applications with Expo for 500k+ users
-- Implemented comprehensive testing with Playwright and Jest
-- Set up CI/CD automation with GitHub Actions
+- Architected real-time WebSocket and MQTT systems for live communication enabling 500k+ concurrent users
+- Built and deployed responsive React Native applications using Expo with comprehensive testing via Playwright and Jest
+- Implemented TypeScript-based full-stack solutions for customer-facing web and mobile platforms
+- Set up CI/CD automation pipelines with GitHub Actions for continuous deployment and monitoring
+- Designed scalable real-time architectures supporting event-driven communication patterns
+- Mentored junior developers and established frontend best practices across teams
 
-**Tech:** React Native, TypeScript, React.js, WebSockets, MQTT, Playwright, CI/CD
+**Tech:** React Native, TypeScript, React.js, WebSockets, MQTT, Playwright, Jest, CI/CD, GitHub Actions
 
-### Palred Technologies | React Native Developer (2020)
-Built and maintained mobile workflows for service discovery, booking, and order management.
+💼 **Palred Technologies**
+React Native Developer | 2020
 
-**Key Achievements:**
-- Integrated Google Maps with real-time location tracking
-- Developed Redux state management for complex workflows
-- Deployed to both iOS App Store and Google Play
+- Built and maintained mobile workflows for service discovery, booking, and order management systems
+- Integrated Google Maps with real-time location tracking and geofencing capabilities
+- Developed complex Redux state management for multi-step workflows and user interactions
+- Deployed production applications to both iOS App Store and Google Play with performance optimization
+- Implemented offline-first architecture for seamless mobile experiences
 
-**Tech:** React Native, Redux, Google Maps, REST APIs
+**Tech:** React Native, Redux, Google Maps, REST APIs, iOS, Android
 
-### Norm Software | React Native Developer (2019)
-Developed Health & Wellness and Sports Gaming applications.
+💼 **Norm Software**
+React Native Developer | 2019
 
-**Key Achievements:**
-- Integrated Google Fit for health data synchronization
-- Implemented Segment analytics and Branch.io deep linking
-- Optimized app performance for 100k+ active users
+- Developed Health & Wellness and Sports Gaming applications serving 100k+ active users
+- Integrated Google Fit and health data synchronization for fitness tracking features
+- Implemented Segment analytics and Branch.io deep linking for user engagement tracking
+- Optimized app performance through rendering efficiency and resource management
+- Built modular component libraries for rapid feature development
 
-**Tech:** React Native, Google Fit, Segment, Branch.io
+**Tech:** React Native, Google Fit, Segment, Branch.io, Performance Optimization
 
-### Kellton Tech Solutions | Junior Software Developer (2017 — 2018)
-Built enterprise Android applications for employee management.
+💼 **Kellton Tech Solutions**
+Junior Software Developer | 2017 — 2018
 
-**Key Achievements:**
-- Developed attendance and work reporting systems
-- Implemented REST API integrations
-- Material Design compliance across all applications
+- Built enterprise Android applications for employee management and attendance tracking
+- Developed REST API integrations for backend synchronization and data persistence
+- Ensured Material Design compliance and UI consistency across applications
+- Implemented authentication and secure data handling for enterprise environments
 
 **Tech:** Android, Material Design, REST APIs, Enterprise Applications
 
