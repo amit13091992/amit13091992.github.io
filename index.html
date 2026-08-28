@@ -29,6 +29,7 @@
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#ai">AI</a>
       <a href="#writing">Writing</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
@@ -47,6 +48,7 @@
     <a href="#about" title="About">◎</a>
     <a href="#experience" title="Experience">▣</a>
     <a href="#projects" title="Projects">&lt;/&gt;</a>
+    <a href="#ai" title="AI">🤖</a>
     <a href="#writing" title="Writing">✎</a>
     <a href="#skills" title="Skills">✦</a>
     <a href="#contact" title="Contact">✉</a>
@@ -58,7 +60,7 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="#home">Home</a><a href="#about">About</a><a href="#experience">Experience</a>
-    <a href="#projects">Projects</a><a href="#writing">Writing</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    <a href="#projects">Projects</a><a href="#ai">AI</a><a href="#writing">Writing</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
   </div>
 
   <main>
@@ -82,18 +84,85 @@
         </div>
 
         <div class="hero-visual reveal">
-          <div class="orbit orbit-a"></div>
-          <div class="orbit orbit-b"></div>
-          <div class="orbit orbit-c"></div>
-          <div class="tech-node node-react">⚛</div>
-          <div class="tech-node node-ts">TS</div>
-          <div class="tech-node node-mobile">▯</div>
-          <div class="tech-node node-api">&lt;/&gt;</div>
-          <div class="tech-node node-native">N</div>
-          <div class="portrait-wrap">
+          <svg class="mindmap-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+            <!-- Center circle with portrait -->
+            <defs>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <!-- Primary branches -->
+            <line x1="400" y1="300" x2="150" y2="100" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="400" y1="300" x2="400" y2="50" stroke="rgba(255,107,0,.25)" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="400" y1="300" x2="650" y2="100" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="400" y1="300" x2="150" y2="500" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="400" y1="300" x2="650" y2="500" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
+            <line x1="400" y1="300" x2="400" y2="550" stroke="rgba(255,107,0,.25)" stroke-width="2" stroke-dasharray="5,5"/>
+
+            <!-- Secondary branches from top nodes -->
+            <line x1="150" y1="100" x2="80" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="150" y1="100" x2="220" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="400" y1="50" x2="400" y2="10" stroke="rgba(255,107,0,.15)" stroke-width="1.5"/>
+            <line x1="650" y1="100" x2="580" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="650" y1="100" x2="720" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="150" y1="500" x2="80" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="150" y1="500" x2="220" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="650" y1="500" x2="580" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+            <line x1="650" y1="500" x2="720" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
+
+            <!-- Center node (portrait area) -->
+            <circle cx="400" cy="300" r="55" fill="var(--white)" stroke="var(--orange)" stroke-width="3" filter="url(#glow)"/>
+
+            <!-- Primary nodes -->
+            <circle cx="150" cy="100" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
+            <circle cx="400" cy="50" r="38" fill="var(--white)" stroke="rgba(255,107,0,.4)" stroke-width="2"/>
+            <circle cx="650" cy="100" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
+            <circle cx="150" cy="500" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
+            <circle cx="650" cy="500" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
+            <circle cx="400" cy="550" r="38" fill="var(--white)" stroke="rgba(255,107,0,.4)" stroke-width="2"/>
+
+            <!-- Secondary nodes -->
+            <circle cx="80" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="220" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="400" cy="10" r="28" fill="var(--white)" stroke="rgba(255,107,0,.3)" stroke-width="1.5"/>
+            <circle cx="580" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="720" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="80" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="220" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="580" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+            <circle cx="720" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
+
+            <!-- Text labels -->
+            <text x="150" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">React Native</text>
+            <text x="400" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">TypeScript</text>
+            <text x="650" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">AI / GenAI</text>
+            <text x="150" y="510" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">Real-time</text>
+            <text x="650" y="510" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">Architecture</text>
+            <text x="400" y="565" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">Performance</text>
+
+            <!-- Secondary labels -->
+            <text x="80" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Mobile</text>
+            <text x="220" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Web</text>
+            <text x="400" y="18" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Full-stack</text>
+            <text x="580" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">LLMs</text>
+            <text x="720" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Prompt</text>
+            <text x="80" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">WebSockets</text>
+            <text x="220" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">MQTT</text>
+            <text x="580" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Optimization</text>
+            <text x="720" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Monitoring</text>
+          </svg>
+
+          <!-- Center portrait overlay -->
+          <div class="portrait-wrap portrait-center">
             <img src="assets/amit-pandya.jpg" alt="Professional portrait of Amit Kumar Pandya">
           </div>
-          <div class="visual-caption"><span></span> ENGINEERING • MOBILE • SYSTEMS</div>
+
+          <div class="visual-caption"><span></span> ENGINEERING • AI • MOBILE • SYSTEMS</div>
         </div>
 
         <div class="glance-card reveal">
@@ -102,14 +171,14 @@
           <div class="glance-item"><strong>20+</strong><span>Business-critical features</span></div>
           <div class="glance-item"><strong>10+</strong><span>Mobile & web applications</span></div>
           <div class="glance-item"><strong>50+</strong><span>Automated workflows</span></div>
-          <div class="glance-item"><strong>3+</strong><span>Developers mentored</span></div>
+          <div class="glance-item"><strong>10+</strong><span>Developers mentored</span></div>
         </div>
       </div>
 
       <div class="metrics">
         <div><b data-count="9">0</b><span>Years Experience</span></div>
         <div><b data-count="20">0</b><span>Critical Features</span></div>
-        <div><b data-count="3">0</b><span>Developers Mentored</span></div>
+        <div><b data-count="10">0</b><span>Developers Mentored</span></div>
         <div><b data-count="50">0</b><span>Automated Workflows</span></div>
         <div><b data-count="5">0</b><span>Domains Worked</span></div>
       </div>
@@ -120,11 +189,12 @@
         <p class="eyebrow">01 / ABOUT</p>
         <h2>Engineering solutions<br><em>that scale.</em></h2>
       </div>
-      <div class="about-layout">
-        <div class="about-copy reveal">
-          <p class="lead">Results-driven Senior Software Engineer with 9+ years of experience building scalable mobile and web applications using React Native, React.js, JavaScript and TypeScript.</p>
-          <p>My work spans healthcare, AI, FinTech, education and enterprise products. I enjoy solving the parts of software that sit between product requirements and production reality: architecture, APIs, authentication, real-time communication, testing, performance and delivery.</p>
-          <div class="quote-line">“Good engineering turns complexity into something people can use.”</div>
+      <div class=”about-layout”>
+        <div class=”about-copy reveal”>
+          <p class=”lead”>Results-driven Senior Software Engineer with 9+ years of experience building scalable mobile and web applications using React Native, React.js, JavaScript and TypeScript.</p>
+          <p>My work spans healthcare, AI, FinTech, education and enterprise products. I specialize in solving the parts of software that sit between product requirements and production reality: architecture, APIs, authentication, real-time communication, testing, performance, delivery and AI integration.</p>
+          <p>I leverage AI tools like GitHub Copilot, Cursor, and Claude to accelerate development, solve complex architectural challenges, and stay current with emerging technologies.</p>
+          <div class=”quote-line”>”Good engineering turns complexity into something people can use.”</div>
         </div>
         <div class="system-map reveal" id="systemMap">
           <div class="map-center">PRODUCT</div>
@@ -134,6 +204,7 @@
           <div class="map-node n4">Real-time</div>
           <div class="map-node n5">Performance</div>
           <div class="map-node n6">CI / CD</div>
+          <div class="map-node n7">AI & Tooling</div>
           <svg viewBox="0 0 600 430" preserveAspectRatio="none" aria-hidden="true">
             <line x1="300" y1="215" x2="110" y2="90"></line>
             <line x1="300" y1="215" x2="300" y2="55"></line>
@@ -141,6 +212,7 @@
             <line x1="300" y1="215" x2="95" y2="335"></line>
             <line x1="300" y1="215" x2="505" y2="335"></line>
             <line x1="300" y1="215" x2="300" y2="390"></line>
+            <line x1="300" y1="215" x2="520" y2="215"></line>
           </svg>
         </div>
       </div>
@@ -264,29 +336,73 @@
         <article class="capability reveal"><span class="cap-icon">↯</span><h3>Real-time Systems</h3><p>WebSockets, MQTT and event-driven communication for low-latency workflows.</p><b>02</b></article>
         <article class="capability reveal"><span class="cap-icon">⌘</span><h3>Architecture</h3><p>Scalable application design, reusable systems, monorepos and maintainable frontend architecture.</p><b>03</b></article>
         <article class="capability reveal"><span class="cap-icon">✓</span><h3>Testing & Automation</h3><p>Playwright automation, Jest, regression testing and CI/CD workflows.</p><b>04</b></article>
-        <article class="capability reveal"><span class="cap-icon">AI</span><h3>Modern Development</h3><p>AI-assisted development using GitHub Copilot, Cursor and Claude, with ongoing GenAI exploration.</p><b>05</b></article>
+        <article class="capability reveal"><span class="cap-icon">🧠</span><h3>LLM Integration</h3><p>Designing and integrating language models, prompt engineering, and context-aware intelligent features.</p><b>05</b></article>
         <article class="capability reveal"><span class="cap-icon">⚡</span><h3>Performance</h3><p>Rendering efficiency, API interactions and resource optimization across mobile and web.</p><b>06</b></article>
+      </div>
+    </section>
+
+    <section class="section ai-section" id="ai">
+      <div class="section-heading reveal">
+        <p class="eyebrow">AI IN DEVELOPMENT</p>
+        <h2>Leveraging AI<br><em>for better engineering.</em></h2>
+      </div>
+      <div class="ai-grid">
+        <article class="ai-card reveal">
+          <h3>Code Generation & Refactoring</h3>
+          <p>Using GitHub Copilot, Cursor, and Claude to accelerate development, improve code quality, and architect complex systems efficiently.</p>
+          <div class="ai-tags"><span>GitHub Copilot</span><span>Cursor</span><span>Claude</span><span>TypeScript</span></div>
+        </article>
+        <article class="ai-card reveal">
+          <h3>Problem Solving & Architecture</h3>
+          <p>Leveraging AI for technical analysis, design decisions, and navigating complex architectural trade-offs in React Native and backend systems.</p>
+          <div class="ai-tags"><span>Architecture Design</span><span>Debugging</span><span>Documentation</span><span>Analysis</span></div>
+        </article>
+        <article class="ai-card reveal">
+          <h3>Learning & Knowledge Synthesis</h3>
+          <p>Staying current with new technologies, frameworks, and best practices through AI-assisted exploration and documentation.</p>
+          <div class="ai-tags"><span>Technical Learning</span><span>Best Practices</span><span>Frameworks</span><span>Exploration</span></div>
+        </article>
       </div>
     </section>
 
     <section class="section writing-section" id="writing">
       <div class="section-heading reveal">
-        <p class="eyebrow">05 / WRITING</p>
+        <p class="eyebrow">06 / WRITING</p>
         <h2>Thinking in public<br><em>about engineering.</em></h2>
       </div>
       <div class="writing-list">
-        <a class="writing-item reveal" href="https://www.linkedin.com/pulse/react-native-vs-flutter-2026-practical-engineering-amit-kumar-pandya-ywjpc" target="_blank" rel="noreferrer">
-          <span>01</span><div><small>REACT NATIVE / ARCHITECTURE</small><h3>React Native vs Flutter in 2026 — A Practical Engineering Perspective</h3></div><strong>↗</strong>
-        </a>
-        <a class="writing-item reveal" href="https://www.linkedin.com/pulse/integrating-biometric-authentication-react-native-face-pandya-0wsuc" target="_blank" rel="noreferrer">
-          <span>02</span><div><small>SECURITY / MOBILE</small><h3>Integrating Biometric Authentication in React Native</h3></div><strong>↗</strong>
-        </a>
+        <article class="writing-item reveal">
+          <div class="writing-header">
+            <span class="writing-number">01</span>
+            <div class="writing-meta">
+              <small>REACT NATIVE / ARCHITECTURE</small>
+              <h3>React Native vs Flutter in 2026 — A Practical Engineering Perspective</h3>
+              <p class="writing-excerpt">A technical comparison of two leading cross-platform mobile frameworks, examining architectural approaches, performance characteristics, and practical guidance for engineering teams.</p>
+              <div class="writing-tags"><span>React Native</span><span>Flutter</span><span>Architecture</span><span>Performance</span><span>Cross-platform</span></div>
+              <p class="writing-date">Published March 14, 2026</p>
+            </div>
+            <a href="https://www.linkedin.com/pulse/react-native-vs-flutter-2026-practical-engineering-amit-kumar-pandya-ywjpc" target="_blank" rel="noreferrer" class="writing-link">Read Article <span>↗</span></a>
+          </div>
+        </article>
+        <article class="writing-item reveal">
+          <div class="writing-header">
+            <span class="writing-number">02</span>
+            <div class="writing-meta">
+              <small>SECURITY / MOBILE</small>
+              <h3>Integrating Biometric Authentication in React Native</h3>
+              <p class="writing-excerpt">A practical guide to implementing Face ID and fingerprint authentication in React Native, covering architectural decisions, security frameworks, and real-world production challenges.</p>
+              <div class="writing-tags"><span>React Native</span><span>Biometrics</span><span>Security</span><span>Authentication</span><span>iOS / Android</span></div>
+              <p class="writing-date">Published February 23, 2026</p>
+            </div>
+            <a href="https://www.linkedin.com/pulse/integrating-biometric-authentication-react-native-face-pandya-0wsuc" target="_blank" rel="noreferrer" class="writing-link">Read Article <span>↗</span></a>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="section contact-section" id="contact">
       <div class="contact-panel reveal">
-        <p class="eyebrow">06 / CONTACT</p>
+        <p class="eyebrow">07 / CONTACT</p>
         <h2>Let's build<br><em>something useful.</em></h2>
         <p>Open to conversations around React Native, mobile architecture, engineering problems and interesting software projects.</p>
         <div class="contact-actions">
