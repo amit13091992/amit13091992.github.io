@@ -1,44 +1,225 @@
-# Amit Pandya — Interactive Portfolio
+# Amit Kumar Pandya — Senior Software Engineer
 
-Static, responsive personal portfolio built with HTML, CSS and vanilla JavaScript.
+> Building scalable, high-performance mobile and web applications with clean architecture, real-time systems, and thoughtful user experiences.
 
-## Features
+**Portfolio:** [amit13091992.github.io](https://amit13091992.github.io) | **LinkedIn:** [amit-kumar-pandya](https://www.linkedin.com/in/amit-kumar-pandya-258699120/) | **GitHub:** [@amit13091992](https://github.com/amit13091992)
 
-- Responsive desktop/tablet/mobile layouts
-- White / navy / orange visual system
-- Animated hero and engineering visualization
-- GSAP scroll reveals and motion
-- Interactive project cards
-- Animated metrics
-- Dark/light theme
-- Custom cursor on desktop
-- Reduced-motion support
-- Downloadable resume
-- GitHub / LinkedIn links
-- No build step required
+---
 
-## Publish with GitHub Pages
+## 👨‍💻 About Me
 
-1. Create a public repository named `amit13091992.github.io`.
-2. Copy all files from this folder into the repository.
-3. Commit and push to `main`.
-4. In GitHub: **Settings → Pages → Deploy from a branch → main → / (root)**.
-5. Your portfolio will be available at `https://amit13091992.github.io/`.
+Senior Software Engineer with **9+ years of experience** building scalable mobile and web applications. Specialized in React Native, TypeScript, mobile architecture, real-time systems, and performance optimization.
 
-## Local preview
+**My expertise spans:**
+- Cross-platform mobile development (iOS & Android)
+- Full-stack application architecture
+- Real-time communication systems
+- AI-assisted development workflows
+- Production deployment and scaling
 
-Because the site is static, you can open `index.html` directly. For best results, use a local server:
+I work across healthcare, FinTech, AI, education, and enterprise products, solving the intersection of product requirements and production reality through clean code and thoughtful design.
 
-```bash
-python3 -m http.server 8000
-```
+---
 
-Then open `http://localhost:8000`.
+## 💼 Professional Tech Stack
 
-## Files
+### Mobile Development
+[![Mobile Stack](https://skillicons.dev/icons?i=react,expo,androidstudio&perline=3)](https://skillicons.dev)
 
-- `index.html` — page structure/content
-- `styles.css` — responsive design system
-- `script.js` — interactions and animations
-- `assets/amit-pandya.jpg` — supplied profile image
-- `assets/Amit-Kumar-Pandya-Resume.pdf` — supplied resume
+- **React Native** — 6+ years building cross-platform mobile apps
+- **Expo** — Managed workflows and rapid iteration
+- **Android & iOS** — Native platform expertise and App Store deployments
+
+### Frontend & Web
+[![Frontend Stack](https://skillicons.dev/icons?i=html,css,js,ts,react,vite&perline=6)](https://skillicons.dev)
+
+- **React.js** — Modern component-based architecture
+- **TypeScript** — Type-safe, maintainable codebases
+- **HTML5 & CSS3** — Semantic markup and responsive design
+- **Vite** — Next-generation build tooling
+
+### Backend & APIs
+[![Backend Stack](https://skillicons.dev/icons?i=nodejs,express,nestjs,prisma,mysql,mongodb&perline=6)](https://skillicons.dev)
+
+- **Node.js** — JavaScript runtime for scalable servers
+- **NestJS** — Enterprise-grade backend framework
+- **Express** — Lightweight, flexible API development
+- **Prisma** — Modern ORM with type safety
+- **MySQL & MongoDB** — Relational and document databases
+
+### Real-time Systems
+- **WebSockets** — Bidirectional real-time communication
+- **MQTT** — Lightweight pub/sub messaging protocol
+- **REST APIs** — RESTful architectural patterns
+
+### DevOps & CI/CD
+[![DevOps Stack](https://skillicons.dev/icons?i=git,github,docker,githubactions,npm&perline=5)](https://skillicons.dev)
+
+- **Git & GitHub** — Version control and repository management
+- **Docker** — Containerization and deployment
+- **GitHub Actions** — Automated CI/CD pipelines
+- **npm & Turborepo** — Package management and monorepo scaling
+
+### Testing & Quality
+[![Testing Stack](https://skillicons.dev/icons?i=jest,playwright&perline=2)](https://skillicons.dev)
+
+- **Jest** — Comprehensive JavaScript testing
+- **Playwright** — End-to-end automation testing
+- **Regression Testing** — Ensuring code stability at scale
+
+### AI & Development Tools
+- **GitHub Copilot** — AI-powered code generation
+- **Cursor IDE** — AI-first code editor
+- **Claude API** — Advanced language model integration
+- **Prompt Engineering** — Optimizing LLM workflows
+
+### Cloud & Infrastructure
+- **AWS** — EC2, S3, Lambda, RDS services
+- **Expo Cloud** — Mobile app deployment and updates
+
+---
+
+## 🎯 Experience
+
+### PurpleTalk India Pvt. Ltd. | Senior Analyst (2020 — Present)
+Led frontend architecture and development for customer-facing web and mobile applications.
+
+**Key Achievements:**
+- Architected real-time WebSocket and MQTT systems for live communication
+- Built responsive React Native applications with Expo for 500k+ users
+- Implemented comprehensive testing with Playwright and Jest
+- Set up CI/CD automation with GitHub Actions
+
+**Tech:** React Native, TypeScript, React.js, WebSockets, MQTT, Playwright, CI/CD
+
+### Palred Technologies | React Native Developer (2020)
+Built and maintained mobile workflows for service discovery, booking, and order management.
+
+**Key Achievements:**
+- Integrated Google Maps with real-time location tracking
+- Developed Redux state management for complex workflows
+- Deployed to both iOS App Store and Google Play
+
+**Tech:** React Native, Redux, Google Maps, REST APIs
+
+### Norm Software | React Native Developer (2019)
+Developed Health & Wellness and Sports Gaming applications.
+
+**Key Achievements:**
+- Integrated Google Fit for health data synchronization
+- Implemented Segment analytics and Branch.io deep linking
+- Optimized app performance for 100k+ active users
+
+**Tech:** React Native, Google Fit, Segment, Branch.io
+
+### Kellton Tech Solutions | Junior Software Developer (2017 — 2018)
+Built enterprise Android applications for employee management.
+
+**Key Achievements:**
+- Developed attendance and work reporting systems
+- Implemented REST API integrations
+- Material Design compliance across all applications
+
+**Tech:** Android, Material Design, REST APIs, Enterprise Applications
+
+---
+
+## 🚀 Featured Projects
+
+### rn-dep-scanner
+**Open Source / Developer Tooling**
+
+A React Native dependency intelligence CLI that surfaces compatibility issues, breaking changes, and security vulnerabilities before they become production problems.
+
+- **Tech:** TypeScript, CLI, SemVer, OSV.dev, Lockfiles, CI/CD
+- **GitHub:** [amit13091992/rn-scanner](https://github.com/amit13091992/rn-scanner)
+
+### Ecommerce Monorepo
+**Full-Stack / Architecture**
+
+A TypeScript monorepo exploring shared packages and full-stack architecture with modern tooling and best practices.
+
+- **Tech:** React, NestJS, Prisma, MySQL, Turborepo, TypeScript
+- **GitHub:** [amit13091992/ecommerce-monorepo](https://github.com/amit13091992/ecommerce-monorepo)
+
+---
+
+## 📚 Technical Writing
+
+I share engineering insights on React Native, mobile architecture, and security:
+
+### [React Native vs Flutter in 2026 — A Practical Engineering Perspective](https://www.linkedin.com/pulse/react-native-vs-flutter-2026-practical-engineering-amit-kumar-pandya-ywjpc)
+Technical comparison examining architectural approaches, performance, developer experience, and hiring implications.
+
+**Topics:** React Native, Flutter, Architecture, Performance, Cross-platform Development
+
+### [Integrating Biometric Authentication in React Native](https://www.linkedin.com/pulse/integrating-biometric-authentication-react-native-face-pandya-0wsuc)
+Practical guide to implementing Face ID and fingerprint authentication with production-grade security considerations.
+
+**Topics:** React Native, Biometrics, Security, Authentication, iOS/Android
+
+---
+
+## 🎓 Core Competencies
+
+### Mobile Development
+Cross-platform Android and iOS applications using React Native, Expo, and native platform APIs.
+
+### Real-time Systems
+WebSockets, MQTT, and event-driven architecture for low-latency, high-frequency communication.
+
+### Architecture & Design
+Scalable application design, clean architecture patterns, monorepos, and maintainable frontend systems.
+
+### Testing & Automation
+Playwright automation, Jest unit testing, regression testing, and robust CI/CD workflows.
+
+### LLM Integration
+Language model integration, prompt engineering, and AI-assisted development workflows.
+
+### Performance Optimization
+Rendering efficiency, API optimization, resource management, and mobile performance tuning.
+
+---
+
+## 📊 By The Numbers
+
+- **9+** Years of professional software engineering
+- **20+** Business-critical features shipped to production
+- **10+** Mobile and web applications built
+- **50+** Automated workflows and CI/CD pipelines
+- **10+** Developers mentored and guided
+- **5+** Industries and domains (Healthcare, FinTech, AI, Education, Enterprise)
+
+---
+
+## 📈 GitHub Activity
+
+### Profile Statistics
+- 📊 **Active Projects** - Building tools and applications
+- ⭐ **Open Source** - Contributing to the community with rn-dep-scanner and more
+- 🔄 **Full-Stack Development** - Mobile, web, and backend expertise
+- 📝 **Consistent Contributions** - Active daily commits and code reviews
+
+### Key Repositories
+- **[rn-dep-scanner](https://github.com/amit13091992/rn-scanner)** - React Native dependency intelligence CLI
+- **[ecommerce-monorepo](https://github.com/amit13091992/ecommerce-monorepo)** - Full-stack TypeScript monorepo
+- More projects available on **[GitHub Profile](https://github.com/amit13091992)**
+
+### GitHub Profile
+[![GitHub Profile Badge](https://img.shields.io/badge/GitHub-amit13091992-181717?style=flat-square&logo=github)](https://github.com/amit13091992)
+[![Profile Views](https://komarev.com/ghpvc/?username=amit13091992&color=ff6b00&style=flat-square)](https://github.com/amit13091992)
+
+---
+
+## 🤝 Let's Connect
+
+I'm open to conversations about React Native, mobile architecture, real-time systems, and interesting engineering problems.
+
+- **LinkedIn:** [amit-kumar-pandya](https://www.linkedin.com/in/amit-kumar-pandya-258699120)
+- **GitHub:** [@amit13091992](https://github.com/amit13091992)
+- **Email:** amit13091992@gmail.com
+
+---
+
+**Built with focus on clean code, scalability, and user experience.**

@@ -84,85 +84,17 @@
         </div>
 
         <div class="hero-visual reveal">
-          <svg class="mindmap-svg" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <!-- Center circle with portrait -->
-            <defs>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-
-            <!-- Primary branches -->
-            <line x1="400" y1="300" x2="150" y2="100" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="400" y1="300" x2="400" y2="50" stroke="rgba(255,107,0,.25)" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="400" y1="300" x2="650" y2="100" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="400" y1="300" x2="150" y2="500" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="400" y1="300" x2="650" y2="500" stroke="rgba(37,99,235,.25)" stroke-width="2" stroke-dasharray="5,5"/>
-            <line x1="400" y1="300" x2="400" y2="550" stroke="rgba(255,107,0,.25)" stroke-width="2" stroke-dasharray="5,5"/>
-
-            <!-- Secondary branches from top nodes -->
-            <line x1="150" y1="100" x2="80" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="150" y1="100" x2="220" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="400" y1="50" x2="400" y2="10" stroke="rgba(255,107,0,.15)" stroke-width="1.5"/>
-            <line x1="650" y1="100" x2="580" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="650" y1="100" x2="720" y2="20" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="150" y1="500" x2="80" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="150" y1="500" x2="220" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="650" y1="500" x2="580" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-            <line x1="650" y1="500" x2="720" y2="580" stroke="rgba(37,99,235,.15)" stroke-width="1.5"/>
-
-            <!-- Center node (portrait area) -->
-            <circle cx="400" cy="300" r="55" fill="var(--white)" stroke="var(--orange)" stroke-width="3" filter="url(#glow)"/>
-
-            <!-- Primary nodes -->
-            <circle cx="150" cy="100" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
-            <circle cx="400" cy="50" r="38" fill="var(--white)" stroke="rgba(255,107,0,.4)" stroke-width="2"/>
-            <circle cx="650" cy="100" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
-            <circle cx="150" cy="500" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
-            <circle cx="650" cy="500" r="38" fill="var(--white)" stroke="rgba(37,99,235,.4)" stroke-width="2"/>
-            <circle cx="400" cy="550" r="38" fill="var(--white)" stroke="rgba(255,107,0,.4)" stroke-width="2"/>
-
-            <!-- Secondary nodes -->
-            <circle cx="80" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="220" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="400" cy="10" r="28" fill="var(--white)" stroke="rgba(255,107,0,.3)" stroke-width="1.5"/>
-            <circle cx="580" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="720" cy="20" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="80" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="220" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="580" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-            <circle cx="720" cy="580" r="28" fill="var(--white)" stroke="rgba(37,99,235,.3)" stroke-width="1.5"/>
-
-            <!-- Text labels -->
-            <text x="150" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">React Native</text>
-            <text x="400" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">TypeScript</text>
-            <text x="650" y="110" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">AI / GenAI</text>
-            <text x="150" y="510" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">Real-time</text>
-            <text x="650" y="510" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">Architecture</text>
-            <text x="400" y="565" text-anchor="middle" font-size="12" font-weight="bold" fill="var(--navy)" class="mindmap-label">Performance</text>
-
-            <!-- Secondary labels -->
-            <text x="80" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Mobile</text>
-            <text x="220" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Web</text>
-            <text x="400" y="18" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Full-stack</text>
-            <text x="580" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">LLMs</text>
-            <text x="720" y="28" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Prompt</text>
-            <text x="80" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">WebSockets</text>
-            <text x="220" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">MQTT</text>
-            <text x="580" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Optimization</text>
-            <text x="720" y="588" text-anchor="middle" font-size="10" fill="var(--muted)" class="mindmap-label-sm">Monitoring</text>
-          </svg>
-
-          <!-- Center portrait overlay -->
-          <div class="portrait-wrap portrait-center">
+          <div class="portrait-wrap">
             <img src="assets/amit-pandya.jpg" alt="Professional portrait of Amit Kumar Pandya">
           </div>
-
-          <div class="visual-caption"><span></span> ENGINEERING • AI • MOBILE • SYSTEMS</div>
+          <div class="skill-badges">
+            <span class="badge">React Native</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Mobile Architecture</span>
+            <span class="badge">Real-time Systems</span>
+            <span class="badge">Performance</span>
+            <span class="badge">AI & Tooling</span>
+          </div>
         </div>
 
         <div class="glance-card reveal">
@@ -196,24 +128,31 @@
           <p>I leverage AI tools like GitHub Copilot, Cursor, and Claude to accelerate development, solve complex architectural challenges, and stay current with emerging technologies.</p>
           <div class=”quote-line”>”Good engineering turns complexity into something people can use.”</div>
         </div>
-        <div class="system-map reveal" id="systemMap">
-          <div class="map-center">PRODUCT</div>
-          <div class="map-node n1">React Native</div>
-          <div class="map-node n2">TypeScript</div>
-          <div class="map-node n3">APIs</div>
-          <div class="map-node n4">Real-time</div>
-          <div class="map-node n5">Performance</div>
-          <div class="map-node n6">CI / CD</div>
-          <div class="map-node n7">AI & Tooling</div>
-          <svg viewBox="0 0 600 430" preserveAspectRatio="none" aria-hidden="true">
-            <line x1="300" y1="215" x2="110" y2="90"></line>
-            <line x1="300" y1="215" x2="300" y2="55"></line>
-            <line x1="300" y1="215" x2="505" y2="95"></line>
-            <line x1="300" y1="215" x2="95" y2="335"></line>
-            <line x1="300" y1="215" x2="505" y2="335"></line>
-            <line x1="300" y1="215" x2="300" y2="390"></line>
-            <line x1="300" y1="215" x2="520" y2="215"></line>
-          </svg>
+        <div class="expertise-grid reveal">
+          <div class="expertise-item">
+            <h4>Mobile Development</h4>
+            <p>Cross-platform apps with React Native and Expo for iOS, Android, and web.</p>
+          </div>
+          <div class="expertise-item">
+            <h4>Real-time Systems</h4>
+            <p>WebSockets, MQTT, and event-driven architecture for low-latency communication.</p>
+          </div>
+          <div class="expertise-item">
+            <h4>Architecture & Design</h4>
+            <p>Scalable systems, clean architecture, and maintainable code patterns.</p>
+          </div>
+          <div class="expertise-item">
+            <h4>Performance</h4>
+            <p>Optimization, rendering efficiency, and resource management across platforms.</p>
+          </div>
+          <div class="expertise-item">
+            <h4>Testing & Quality</h4>
+            <p>Playwright automation, Jest testing, and CI/CD workflows.</p>
+          </div>
+          <div class="expertise-item">
+            <h4>AI & Tooling</h4>
+            <p>AI-assisted development with GitHub Copilot, Cursor, and Claude.</p>
+          </div>
         </div>
       </div>
     </section>
