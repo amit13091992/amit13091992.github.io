@@ -1224,7 +1224,10 @@
             'contact-form-status success';
 
           contactForm.reset();
+          updateMessageCounter();
 
+          contactFormStatus.textContent = 'Message sent successfully.';
+          contactFormStatus.className = 'contact-form-status success';
         } catch (error) {
 
           console.error(
