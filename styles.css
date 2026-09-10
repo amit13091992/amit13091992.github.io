@@ -6016,3 +6016,16 @@ body.dark ::selection {
 
   transform: none;
 }
+
+.message-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+#messageCounter {
+  font-variant-numeric: tabular-nums;
+}

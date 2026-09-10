@@ -818,6 +818,30 @@
   const contactFormStatus =
     document.getElementById('contactFormStatus');
 
+  // Message character counter
+  const messageInput =
+    document.getElementById('contactMessage');
+
+  const messageCounter =
+    document.getElementById('messageCounter');
+
+  if (messageInput && messageCounter) {
+    const updateMessageCounter = () => {
+      const length = messageInput.value.length;
+
+      messageCounter.textContent =
+        `${length.toLocaleString()} / 5,000`;
+    };
+
+    messageInput.addEventListener(
+      'input',
+      updateMessageCounter
+    );
+
+    // Initialize counter
+    updateMessageCounter();
+  }
+
   if (contactForm) {
     contactForm.addEventListener(
       'submit',
