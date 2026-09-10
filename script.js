@@ -845,12 +845,33 @@
         const messageInput =
           document.getElementById('contactMessage');
 
+        const messageCounter =
+          document.getElementById('messageCounter');
+
+        if (messageInput && messageCounter) {
+          const updateMessageCounter = () => {
+            const length =
+              messageInput.value.length;
+
+            messageCounter.textContent =
+              `${length.toLocaleString()} / 5,000`;
+          };
+
+          messageInput.addEventListener(
+            'input',
+            updateMessageCounter
+          );
+
+          updateMessageCounter();
+        }
         console.log('Input elements:', {
           nameInput,
           emailInput,
           subjectInput,
           messageInput
         });
+
+
 
         /*
          * Make sure all input elements exist
@@ -1033,9 +1054,9 @@
           return;
         }
 
-        if (message.length < 5) {
+        if (message.length < 10) {
           contactFormStatus.textContent =
-            'Please enter a longer message.';
+            'Please enter at least 10 characters in your message.';
 
           contactFormStatus.className =
             'contact-form-status error';
