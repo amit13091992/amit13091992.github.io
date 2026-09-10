@@ -1,13 +1,13 @@
-const ALLOWED_ORIGIN =
-    'https://amit13091992.github.io';
+const ALLOWED_ORIGINS = new Set([
+    'https://amitpandyaportfolio.vercel.app',
+    'https://amit13091992.github.io'
+]);
 
 const RESEND_API_URL =
     'https://api.resend.com/emails';
 
-const TO_EMAIL = env.TO_EMAIL;
-
 const corsHeaders = {
-    'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+    'Access-Control-Allow-Origin': [...ALLOWED_ORIGINS].join(', '),
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Content-Type': 'application/json'
