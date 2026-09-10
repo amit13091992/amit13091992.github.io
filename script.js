@@ -809,125 +809,283 @@
   // CONTACT FORM — CLOUDFLARE WORKER + RESEND
   // =========================================================
 
-  // Contact form
   const CONTACT_ENDPOINT =
     'https://amit-portfolio-contact.pandeyamit1392.workers.dev';
 
-  const contactForm = document.getElementById('contactForm');
+  const contactForm =
+    document.getElementById('contactForm');
+
   const contactFormStatus =
     document.getElementById('contactFormStatus');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', async (event) => {
-      event.preventDefault();
+    contactForm.addEventListener(
+      'submit',
+      async (event) => {
+        event.preventDefault();
 
-      if (!contactForm.checkValidity()) {
-        contactForm.reportValidity();
-        return;
-      }
+        console.log(
+          '========== CONTACT FORM SUBMIT =========='
+        );
 
-      const submitButton =
-        contactForm.querySelector('.contact-submit');
+        // Browser-level validation
+        if (!contactForm.checkValidity()) {
+          console.warn(
+            'Browser validation failed'
+          );
 
-      const formData = new FormData(contactForm);
+          contactForm.reportValidity();
+          return;
+        }
 
-      const name =
-        formData.get('name')?.toString().trim() || '';
+        const submitButton =
+          contactForm.querySelector(
+            '.contact-submit'
+          );
 
-      const email =
-        formData.get('email')?.toString().trim() || '';
+        const formData =
+          new FormData(contactForm);
 
-      const subject =
-        formData.get('subject')?.toString().trim() ||
-        'Portfolio Contact';
+        // Read values
+        const name =
+          formData.get('name')?.toString().trim() ||
+          '';
 
-      const message =
-        formData.get('message')?.toString().trim() || '';
+        const email =
+          formData.get('email')?.toString().trim() ||
+          '';
 
-      // Basic frontend validation
-      if (
-        name.length < 2 ||
-        email.length < 5 ||
-        subject.length < 2 ||
-        message.length < 5
-      ) {
-        contactFormStatus.textContent =
-          'Please complete all fields correctly.';
+        const subject =
+          formData.get('subject')?.toString().trim() ||
+          '';
 
-        contactFormStatus.className =
-          'contact-form-status error';
+        const message =
+          formData.get('message')?.toString().trim() ||
+          '';
 
-        return;
-      }
-
-      // Prevent duplicate submissions
-      submitButton.disabled = true;
-
-      const originalButtonText =
-        submitButton.innerHTML;
-
-      submitButton.innerHTML =
-        'Sending... <span>↗</span>';
-
-      contactFormStatus.textContent =
-        'Sending your message...';
-
-      contactFormStatus.className =
-        'contact-form-status';
-
-      try {
-        const response = await fetch(
-          CONTACT_ENDPOINT,
+        // DEBUG LOG
+        console.log(
+          'Form values:',
           {
-            method: 'POST',
+            name,
+            nameLength: name.length,
 
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            email,
+            emailLength: email.length,
 
-            body: JSON.stringify({
-              name,
-              email,
-              subject,
-              message,
-            }),
+            subject,
+            subjectLength: subject.length,
+
+            message,
+            messageLength: message.length
           }
         );
 
-        const result = await response.json();
-
-        if (!response.ok) {
-          throw new Error(
-            result?.message ||
-            'Unable to send message.'
+        // Make sure all values were captured
+        if (
+          !name ||
+          !email ||
+          !subject ||
+          !message
+        ) {
+          console.error(
+            'Frontend validation failed:',
+            {
+              name,
+              email,
+              subject,
+              message
+            }
           );
+
+          contactFormStatus.textContent =
+            'Please complete all fields correctly.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          return;
         }
 
-        contactFormStatus.textContent =
-          'Message sent successfully. I’ll get back to you soon.';
+        // Additional validation
+        if (name.length < 2) {
+          console.warn(
+            'Name is too short'
+          );
 
-        contactFormStatus.className =
-          'contact-form-status success';
+          contactFormStatus.textContent =
+            'Please enter your name.';
 
-        contactForm.reset();
+          contactFormStatus.className =
+            'contact-form-status error';
 
-      } catch (error) {
-        console.error(
-          'Contact form error:',
-          error
+          return;
+        }
+
+        if (subject.length < 2) {
+          console.warn(
+            'Subject is too short'
+          );
+
+          contactFormStatus.textContent =
+            'Please enter a subject.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          return;
+        }
+
+        if (message.length < 5) {
+          console.warn(
+            'Message is too short'
+          );
+
+          contactFormStatus.textContent =
+            'Please enter a longer message.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          return;
+        }
+
+        console.log(
+          'Frontend validation passed.'
         );
 
+        const payload = {
+          name,
+          email,
+          subject,
+          message
+        };
+
+        console.log(
+          'Sending payload to Worker:',
+          payload
+        );
+
+        // Disable button
+        submitButton.disabled = true;
+
+        const originalButtonText =
+          submitButton.innerHTML;
+
+        submitButton.innerHTML =
+          'Sending... <span>↗</span>';
+
         contactFormStatus.textContent =
-          'Something went wrong. Please try again or email me directly.';
+          'Sending your message...';
 
         contactFormStatus.className =
-          'contact-form-status error';
+          'contact-form-status';
 
-      } finally {
-        submitButton.disabled = false;
-        submitButton.innerHTML =
-          originalButtonText;
+        try {
+          console.log(
+            'Calling Worker:',
+            CONTACT_ENDPOINT
+          );
+
+          const response =
+            await fetch(
+              CONTACT_ENDPOINT,
+              {
+                method: 'POST',
+
+                headers: {
+                  'Content-Type':
+                    'application/json'
+                },
+
+                body:
+                  JSON.stringify(payload)
+              }
+            );
+
+          console.log(
+            'Worker response status:',
+            response.status
+          );
+
+          console.log(
+            'Worker response OK:',
+            response.ok
+          );
+
+          // Read response as text first.
+          // This helps us debug non-JSON responses too.
+          const responseText =
+            await response.text();
+
+          console.log(
+            'Worker response body:',
+            responseText
+          );
+
+          let result = {};
+
+          try {
+            result =
+              JSON.parse(responseText);
+          } catch (parseError) {
+            console.error(
+              'Could not parse Worker response as JSON:',
+              parseError
+            );
+          }
+
+          if (!response.ok) {
+            throw new Error(
+              result?.message ||
+              `Worker returned HTTP ${response.status}`
+            );
+          }
+
+          console.log(
+            'Contact form successfully sent.'
+          );
+
+          contactFormStatus.textContent =
+            'Message sent successfully. I’ll get back to you soon.';
+
+          contactFormStatus.className =
+            'contact-form-status success';
+
+          contactForm.reset();
+
+        } catch (error) {
+          console.error(
+            '========== CONTACT FORM ERROR =========='
+          );
+
+          console.error(
+            'Error:',
+            error
+          );
+
+          console.error(
+            'Error message:',
+            error?.message
+          );
+
+          contactFormStatus.textContent =
+            'Something went wrong. Please try again or email me directly.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+        } finally {
+          submitButton.disabled = false;
+
+          submitButton.innerHTML =
+            originalButtonText;
+
+          console.log(
+            '========== CONTACT FORM END =========='
+          );
+        }
       }
-    });
+    );
   }
 })();
