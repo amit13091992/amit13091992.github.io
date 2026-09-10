@@ -1,18 +1,222 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1b3a">
-  <meta name="description" content="Amit Kumar Pandya — Senior Software Engineer specializing in React Native, TypeScript, mobile architecture, performance and real-time systems.">
+  <meta name="description"
+    content="Amit Kumar Pandya — Senior Software Engineer specializing in React Native, TypeScript, mobile architecture, performance and real-time systems.">
   <meta property="og:title" content="Amit Kumar Pandya — Senior Software Engineer">
   <meta property="og:description" content="React Native · TypeScript · Mobile Architecture · Performance">
   <meta property="og:type" content="website">
   <title>Amit Kumar Pandya — Senior Software Engineer</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b1b3a'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='800' font-size='45' text-anchor='middle' fill='%23ff6b00'%3EAP%3C/text%3E%3C/svg%3E">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b1b3a'/%3E%3Ctext x='50' y='68' font-family='Arial' font-weight='800' font-size='45' text-anchor='middle' fill='%23ff6b00'%3EAP%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<!-- =====================================================
+     PORTFOLIO TERMINAL
+     ===================================================== -->
+
+<button class="terminal-launcher" id="terminalLauncher" type="button" aria-label="Open portfolio terminal"
+  aria-controls="portfolioTerminal" aria-expanded="false">
+  <span>&gt;_</span>
+</button>
+
+
+<div class="terminal-overlay" id="terminalOverlay" aria-hidden="true">
+
+  <div class="portfolio-terminal" id="portfolioTerminal" role="dialog" aria-modal="true"
+    aria-labelledby="terminalTitle">
+
+    <!-- Terminal title bar -->
+
+    <div class="terminal-titlebar">
+
+      <div class="terminal-window-controls">
+
+        <button type="button" class="terminal-control terminal-close" id="terminalClose"
+          aria-label="Close terminal"></button>
+
+        <button type="button" class="terminal-control terminal-minimize" id="terminalMinimize"
+          aria-label="Minimize terminal"></button>
+
+        <button type="button" class="terminal-control terminal-maximize" id="terminalMaximize"
+          aria-label="Maximize terminal"></button>
+
+      </div>
+
+
+      <div class="terminal-title" id="terminalTitle">
+        amit@portfolio — zsh
+      </div>
+
+
+      <div class="terminal-title-spacer"></div>
+
+    </div>
+
+
+    <!-- Terminal body -->
+
+    <div class="terminal-body" id="terminalBody" tabindex="-1">
+
+      <div class="portfolio-terminal-output" id="terminalOutput">
+        <div class="terminal-line terminal-muted">
+          Last login: welcome to Amit's portfolio
+        </div>
+
+        <div class="terminal-line terminal-brand">
+          ┌──────────────────────────────────────────┐
+        </div>
+
+        <div class="terminal-line terminal-brand">
+          │ AMIT KUMAR PANDYA │
+        </div>
+
+        <div class="terminal-line terminal-brand">
+          │ Senior Software Engineer │
+        </div>
+
+        <div class="terminal-line terminal-brand">
+          └──────────────────────────────────────────┘
+        </div>
+
+        <div class="portfolio-terminal-line"> Type <span class="terminal-command">help</span>
+          to explore the portfolio.
+        </div>
+
+      </div>
+
+
+      <form class="terminal-input-row" id="terminalForm">
+
+        <span class="terminal-prompt">
+          amit@portfolio ~ %
+        </span>
+
+        <input id="terminalInput" class="terminal-input" type="text" autocomplete="off" autocapitalize="off"
+          spellcheck="false" aria-label="Terminal command" />
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
 <body>
+  <!-- =========================================================
+     PORTFOLIO BOOT LOADER
+     ========================================================= -->
+<div id="portfolioLoader" class="portfolio-loader" aria-hidden="true">
+  <div class="portfolio-loader-grid"></div>
+
+  <div class="portfolio-loader-window">
+
+    <!-- Terminal title bar -->
+    <div class="portfolio-loader-titlebar">
+      <div class="portfolio-loader-controls" aria-hidden="true">
+        <span class="loader-dot loader-dot-red"></span>
+        <span class="loader-dot loader-dot-yellow"></span>
+        <span class="loader-dot loader-dot-green"></span>
+      </div>
+
+      <div class="portfolio-loader-title">
+        amit@portfolio — boot
+      </div>
+
+      <div class="portfolio-loader-version">
+        v1.0.0
+      </div>
+    </div>
+
+    <!-- Loader content -->
+    <div class="portfolio-loader-content">
+
+      <div class="portfolio-loader-label">
+        PERSONAL OPERATING SYSTEM
+      </div>
+
+      <div class="portfolio-loader-heading">
+        BOOT_<span>SEQUENCE</span>
+      </div>
+
+      <div class="portfolio-loader-status">
+        <span></span>
+        SECURE
+      </div>
+
+      <div class="portfolio-loader-terminal">
+
+        <div class="loader-line">
+          <span>&gt;</span>
+          Initializing portfolio...
+          <b>✓</b>
+        </div>
+
+        <div class="loader-line">
+          <span>&gt;</span>
+          Loading skills...
+          <b>✓</b>
+        </div>
+
+        <div class="loader-line">
+          <span>&gt;</span>
+          Loading projects...
+          <b>✓</b>
+        </div>
+
+        <div class="loader-line">
+          <span>&gt;</span>
+          Preparing experience...
+          <b>✓</b>
+        </div>
+
+        <div class="loader-line">
+          <span>&gt;</span>
+          Setting up creative mode...
+          <b>✓</b>
+        </div>
+
+        <div class="loader-line loader-line-active">
+          <span>&gt;</span>
+          Optimizing user experience...
+          <i></i>
+        </div>
+
+      </div>
+
+      <div class="portfolio-loader-progress-header">
+        <span>SYSTEM LOAD</span>
+        <strong id="portfolioLoaderPercent">0%</strong>
+      </div>
+
+      <div class="portfolio-loader-progress">
+        <div id="portfolioLoaderBar"></div>
+      </div>
+
+      <div class="portfolio-loader-message" id="portfolioLoaderMessage">
+        Initializing...
+      </div>
+
+    </div>
+
+    <div class="portfolio-loader-footer">
+      <span>AMIT PANDYA / PERSONAL SYSTEM</span>
+      <span>READY</span>
+    </div>
+
+  </div>
+
+  <div class="portfolio-loader-quote">
+    "GOOD ENGINEERING TURNS COMPLEXITY INTO SOMETHING PEOPLE CAN USE."
+  </div>
+</div>
+
   <div class="page-noise" aria-hidden="true"></div>
   <div class="scroll-progress" id="scrollProgress"></div>
 
@@ -56,13 +260,16 @@
     <a href="#contact" title="Contact">✉</a>
     <div class="rail-socials">
       <a href="https://github.com/amit13091992" target="_blank" rel="noreferrer" aria-label="GitHub">GH</a>
-      <a href="https://www.linkedin.com/in/amit-kumar-pandya-258699120" target="_blank" rel="noreferrer" aria-label="LinkedIn">in</a>
+      <a href="https://www.linkedin.com/in/amit-kumar-pandya-258699120" target="_blank" rel="noreferrer"
+        aria-label="LinkedIn">in</a>
     </div>
   </aside>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#home">Home</a><a href="#about">About</a><a href="#technology">Technology</a><a href="#experience">Experience</a>
-    <a href="#projects">Projects</a><a href="#ai">AI</a><a href="#writing">Writing</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    <a href="#home">Home</a><a href="#about">About</a><a href="#technology">Technology</a><a
+      href="#experience">Experience</a>
+    <a href="#projects">Projects</a><a href="#ai">AI</a><a href="#writing">Writing</a><a href="#skills">Skills</a><a
+      href="#contact">Contact</a>
   </div>
 
   <main>
@@ -73,14 +280,16 @@
           <p class="hello">Hi, I'm</p>
           <h1>Amit <span>Pandya</span></h1>
           <h2>React Native · TypeScript · Mobile Architecture · React.js</h2>
-          <p class="hero-text">I architect and build scalable mobile and web systems — performant, real-time, and designed around the user.</p>
+          <p class="hero-text">I architect and build scalable mobile and web systems — performant, real-time, and
+            designed around the user.</p>
           <div class="hero-actions">
             <a class="primary-btn" href="#projects">Explore My Work <span>↓</span></a>
           </div>
           <div class="social-row">
             <span>Connect with me</span>
             <a href="https://github.com/amit13091992" target="_blank" rel="noreferrer">GitHub ↗</a>
-            <a href="https://www.linkedin.com/in/amit-kumar-pandya-258699120" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="https://www.linkedin.com/in/amit-kumar-pandya-258699120" target="_blank" rel="noreferrer">LinkedIn
+              ↗</a>
           </div>
         </div>
 
@@ -125,9 +334,13 @@
       </div>
       <div class=”about-layout”>
         <div class=”about-copy reveal”>
-          <p class=”lead”>Results-driven Senior Software Engineer with 9+ years of experience building scalable mobile and web applications using React Native, React.js, JavaScript and TypeScript.</p>
-          <p>My work spans healthcare, AI, FinTech, education and enterprise products. I specialize in solving the parts of software that sit between product requirements and production reality: architecture, APIs, authentication, real-time communication, testing, performance, delivery and AI integration.</p>
-          <p>I leverage AI tools like GitHub Copilot, Cursor, and Claude to accelerate development, solve complex architectural challenges, and stay current with emerging technologies.</p>
+          <p class=”lead”>Results-driven Senior Software Engineer with 9+ years of experience building scalable mobile
+            and web applications using React Native, React.js, JavaScript and TypeScript.</p>
+          <p>My work spans healthcare, AI, FinTech, education and enterprise products. I specialize in solving the parts
+            of software that sit between product requirements and production reality: architecture, APIs,
+            authentication, real-time communication, testing, performance, delivery and AI integration.</p>
+          <p>I leverage AI tools like GitHub Copilot, Cursor, and Claude to accelerate development, solve complex
+            architectural challenges, and stay current with emerging technologies.</p>
           <div class=”quote-line”>”Good engineering turns complexity into something people can use.”</div>
         </div>
         <div class="expertise-grid reveal">
@@ -167,15 +380,20 @@
       <div class="tech-grid">
         <article class="tech-card reveal">
           <h3>Mobile Development</h3>
-          <div class="tags"><span>React Native</span><span>Expo</span><span>Android</span><span>iOS</span><span>Play Store Publishing</span><span>App Store Publishing</span></div>
+          <div class="tags"><span>React Native</span><span>Expo</span><span>Android</span><span>iOS</span><span>Play
+              Store Publishing</span><span>App Store Publishing</span></div>
         </article>
         <article class="tech-card reveal">
           <h3>Frontend & Web</h3>
-          <div class="tags"><span>React.js</span><span>TypeScript</span><span>HTML5</span><span>CSS3</span><span>Vite</span></div>
+          <div class="tags">
+            <span>React.js</span><span>TypeScript</span><span>HTML5</span><span>CSS3</span><span>Vite</span>
+          </div>
         </article>
         <article class="tech-card reveal">
           <h3>Backend & APIs</h3>
-          <div class="tags"><span>Node.js</span><span>NestJS</span><span>Express</span><span>Prisma</span><span>MySQL</span><span>MongoDB</span><span>Supabase</span><span>Stripe</span></div>
+          <div class="tags">
+            <span>Node.js</span><span>NestJS</span><span>Express</span><span>Prisma</span><span>MySQL</span><span>MongoDB</span><span>Supabase</span><span>Stripe</span>
+          </div>
         </article>
         <article class="tech-card reveal">
           <h3>Real-time Systems</h3>
@@ -183,7 +401,8 @@
         </article>
         <article class="tech-card reveal">
           <h3>DevOps & CI/CD</h3>
-          <div class="tags"><span>Git & GitHub</span><span>Docker</span><span>GitHub Actions</span><span>npm</span></div>
+          <div class="tags"><span>Git & GitHub</span><span>Docker</span><span>GitHub Actions</span><span>npm</span>
+          </div>
         </article>
         <article class="tech-card reveal">
           <h3>Testing & Quality</h3>
@@ -191,7 +410,8 @@
         </article>
         <article class="tech-card reveal">
           <h3>AI & Development Tools</h3>
-          <div class="tags"><span>GitHub Copilot</span><span>Cursor IDE</span><span>Claude API</span><span>Prompt Engineering</span></div>
+          <div class="tags"><span>GitHub Copilot</span><span>Cursor IDE</span><span>Claude API</span><span>Prompt
+              Engineering</span></div>
         </article>
         <article class="tech-card reveal">
           <h3>Cloud & Infrastructure</h3>
@@ -216,8 +436,11 @@
           <div class="timeline-card">
             <p class="company">PurpleTalk India Pvt. Ltd.</p>
             <h3>Senior Analyst</h3>
-            <p>Led frontend architecture and development for customer-facing web and mobile applications using React.js, React Native, TypeScript and Expo.</p>
-            <div class="tags"><span>React Native</span><span>TypeScript</span><span>WebSockets</span><span>MQTT</span><span>Playwright</span><span>CI/CD</span></div>
+            <p>Led frontend architecture and development for customer-facing web and mobile applications using React.js,
+              React Native, TypeScript and Expo.</p>
+            <div class="tags"><span>React
+                Native</span><span>TypeScript</span><span>WebSockets</span><span>MQTT</span><span>Playwright</span><span>CI/CD</span>
+            </div>
           </div>
         </article>
         <article class="timeline-item reveal">
@@ -226,7 +449,8 @@
           <div class="timeline-card">
             <p class="company">Palred Technologies</p>
             <h3>React Native Developer</h3>
-            <p>Built and maintained mobile workflows for service discovery, booking and order management, including Google Maps and real-time location tracking.</p>
+            <p>Built and maintained mobile workflows for service discovery, booking and order management, including
+              Google Maps and real-time location tracking.</p>
             <div class="tags"><span>React Native</span><span>Redux</span><span>Maps</span><span>REST APIs</span></div>
           </div>
         </article>
@@ -236,8 +460,10 @@
           <div class="timeline-card">
             <p class="company">Norm Software</p>
             <h3>React Native Developer</h3>
-            <p>Worked across Health & Wellness and Sports Gaming applications with Google Fit, authentication, analytics, deep linking and REST APIs.</p>
-            <div class="tags"><span>React Native</span><span>Google Fit</span><span>Segment</span><span>Branch.io</span></div>
+            <p>Worked across Health & Wellness and Sports Gaming applications with Google Fit, authentication,
+              analytics, deep linking and REST APIs.</p>
+            <div class="tags"><span>React Native</span><span>Google Fit</span><span>Segment</span><span>Branch.io</span>
+            </div>
           </div>
         </article>
         <article class="timeline-item reveal">
@@ -246,8 +472,10 @@
           <div class="timeline-card">
             <p class="company">Stimulus Cloud Pvt. Ltd.</p>
             <h3>Freelancer</h3>
-            <p>Delivered Android applications in News and Event Management, handling UI, APIs, location services, debugging, performance and Play Store releases.</p>
-            <div class="tags"><span>Android</span><span>Material Design</span><span>REST</span><span>Location</span></div>
+            <p>Delivered Android applications in News and Event Management, handling UI, APIs, location services,
+              debugging, performance and Play Store releases.</p>
+            <div class="tags"><span>Android</span><span>Material Design</span><span>REST</span><span>Location</span>
+            </div>
           </div>
         </article>
         <article class="timeline-item reveal">
@@ -256,8 +484,10 @@
           <div class="timeline-card">
             <p class="company">Kellton Tech Solutions Pvt. Ltd.</p>
             <h3>Junior Software Developer</h3>
-            <p>Built and sustained enterprise Android applications for employee management, attendance, work reporting and leave workflows.</p>
-            <div class="tags"><span>Android</span><span>Material Design</span><span>REST APIs</span><span>Enterprise</span></div>
+            <p>Built and sustained enterprise Android applications for employee management, attendance, work reporting
+              and leave workflows.</p>
+            <div class="tags"><span>Android</span><span>Material Design</span><span>REST
+                APIs</span><span>Enterprise</span></div>
           </div>
         </article>
       </div>
@@ -274,9 +504,13 @@
         <div class="project-content">
           <p class="project-type">OPEN SOURCE / DEVELOPER TOOLING</p>
           <h3>rn-dep-scanner</h3>
-          <p class="project-description">A React Native dependency intelligence CLI designed to surface compatibility issues, breaking changes and security vulnerabilities before they become release problems.</p>
-          <div class="tags"><span>TypeScript</span><span>CLI</span><span>SemVer</span><span>OSV.dev</span><span>Lockfiles</span><span>CI/CD</span></div>
-          <a class="project-link" href="https://github.com/amit13091992/rn-scanner" target="_blank" rel="noreferrer">Explore on GitHub <span>↗</span></a>
+          <p class="project-description">A React Native dependency intelligence CLI designed to surface compatibility
+            issues, breaking changes and security vulnerabilities before they become release problems.</p>
+          <div class="tags">
+            <span>TypeScript</span><span>CLI</span><span>SemVer</span><span>OSV.dev</span><span>Lockfiles</span><span>CI/CD</span>
+          </div>
+          <a class="project-link" href="https://github.com/amit13091992/rn-scanner" target="_blank"
+            rel="noreferrer">Explore on GitHub <span>↗</span></a>
         </div>
         <div class="scanner-visual">
           <div class="terminal-bar"><span></span><span></span><span></span><b>rn-dep-scanner</b></div>
@@ -286,7 +520,7 @@
             <p class="ok">✓ Compatibility</p>
             <p class="warn">⚠ Breaking changes</p>
             <p class="ok">✓ Security analysis</p>
-            <div class="terminal-line"></div>
+            <div class="portfolio-terminal-line"></div>
             <p><strong>React Native</strong> <small>dependency graph</small></p>
             <div class="mini-graph"><i></i><i></i><i></i><i></i><i></i></div>
           </div>
@@ -298,9 +532,13 @@
         <div class="project-content">
           <p class="project-type">FULL-STACK / ARCHITECTURE</p>
           <h3>Ecommerce Monorepo</h3>
-          <p class="project-description">A TypeScript monorepo exploring shared packages and a full-stack architecture with React, NestJS, Prisma and MySQL.</p>
-          <div class="tags"><span>React</span><span>NestJS</span><span>Prisma</span><span>MySQL</span><span>Turborepo</span><span>TypeScript</span></div>
-          <a class="project-link" href="https://github.com/amit13091992/ecommerce-monorepo" target="_blank" rel="noreferrer">Explore on GitHub <span>↗</span></a>
+          <p class="project-description">A TypeScript monorepo exploring shared packages and a full-stack architecture
+            with React, NestJS, Prisma and MySQL.</p>
+          <div class="tags">
+            <span>React</span><span>NestJS</span><span>Prisma</span><span>MySQL</span><span>Turborepo</span><span>TypeScript</span>
+          </div>
+          <a class="project-link" href="https://github.com/amit13091992/ecommerce-monorepo" target="_blank"
+            rel="noreferrer">Explore on GitHub <span>↗</span></a>
         </div>
         <div class="repo-visual">
           <div class="repo-box">WEB<br><small>React + Vite</small></div>
@@ -312,43 +550,753 @@
       </article>
     </section>
 
-    <section class="section skills-section" id="skills">
-      <div class="section-heading reveal">
-        <p class="eyebrow">05 / EXPERTISE</p>
-        <h2>Engineering<br><em>capabilities.</em></h2>
+    <section class="section skills-matrix-section" id="skills">
+      <div class="skills-matrix-heading reveal">
+        <div>
+          <p class="matrix-eyebrow">05 / TECHNICAL EXPERTISE</p>
+
+          <h2>
+            Skills &<br>
+            <span>Framework Matrix</span>
+          </h2>
+        </div>
       </div>
-      <div class="capability-grid">
-        <article class="capability reveal"><span class="cap-icon">▯</span><h3>Mobile Development</h3><p>Cross-platform Android and iOS applications using React Native and Expo.</p><b>01</b></article>
-        <article class="capability reveal"><span class="cap-icon">↯</span><h3>Real-time Systems</h3><p>WebSockets, MQTT and event-driven communication for low-latency workflows.</p><b>02</b></article>
-        <article class="capability reveal"><span class="cap-icon">⌘</span><h3>Architecture</h3><p>Scalable application design, reusable systems, monorepos and maintainable frontend architecture.</p><b>03</b></article>
-        <article class="capability reveal"><span class="cap-icon">✓</span><h3>Testing & Automation</h3><p>Playwright automation, Jest, regression testing and CI/CD workflows.</p><b>04</b></article>
-        <article class="capability reveal"><span class="cap-icon">🧠</span><h3>LLM Integration</h3><p>Designing and integrating language models, prompt engineering, and context-aware intelligent features.</p><b>05</b></article>
-        <article class="capability reveal"><span class="cap-icon">⚡</span><h3>Performance</h3><p>Rendering efficiency, API interactions and resource optimization across mobile and web.</p><b>06</b></article>
+
+      <p class="matrix-intro">
+        A practical view of the technologies, frameworks, engineering
+        practices and platforms I use to design, build, test and ship
+        production software.
+      </p>
+
+      <!-- FILTERS -->
+      <div class="skills-filter-wrap reveal">
+        <div class="skills-filters" role="tablist" aria-label="Technical expertise categories">
+
+          <button class="skill-filter active" type="button" data-filter="all" role="tab" aria-selected="true">
+            <span class="filter-icon">▱</span>
+            All Tech Stack
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="languages" role="tab" aria-selected="false">
+            <span class="filter-icon">&lt;/&gt;</span>
+            Languages
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="mobile" role="tab" aria-selected="false">
+            <span class="filter-icon">▣</span>
+            Mobile & Cross-Platform
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="web" role="tab" aria-selected="false">
+            <span class="filter-icon">◫</span>
+            Web Engineering
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="backend" role="tab" aria-selected="false">
+            <span class="filter-icon">⌘</span>
+            Backend & APIs
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="data-cloud" role="tab" aria-selected="false">
+            <span class="filter-icon">☁</span>
+            Data & Cloud
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="engineering" role="tab" aria-selected="false">
+            <span class="filter-icon">◇</span>
+            Engineering
+          </button>
+
+          <button class="skill-filter" type="button" data-filter="ai" role="tab" aria-selected="false">
+            <span class="filter-icon">✦</span>
+            AI & Tooling
+          </button>
+
+        </div>
+      </div>
+
+      <!-- SKILL MATRIX -->
+      <div class="skills-matrix reveal">
+
+        <!-- =========================
+       LANGUAGES
+       ========================= -->
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>TypeScript</strong>
+          <small>Primary</small>
+        </div>
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>JavaScript</strong>
+          <small>Primary</small>
+        </div>
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>Java</strong>
+          <small>Core</small>
+        </div>
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>Kotlin</strong>
+          <small>Mobile</small>
+        </div>
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>Swift</strong>
+          <small>iOS</small>
+        </div>
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>HTML5</strong>
+          <small>Core</small>
+        </div>
+
+        <div class="skill-chip" data-category="languages">
+          <span class="chip-dot"></span>
+          <strong>CSS3</strong>
+          <small>Core</small>
+        </div>
+
+
+        <!-- =========================
+       MOBILE
+       ========================= -->
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>React Native</strong>
+          <small>Primary</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>Expo</strong>
+          <small>Primary</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>React Navigation</strong>
+          <small>Core</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>Redux</strong>
+          <small>State</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>TanStack Query</strong>
+          <small>Data</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>Native Modules & Bridges</strong>
+          <small>Bridge</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>Expo Updates / OTA</strong>
+          <small>Release</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>Push Notifications</strong>
+          <small>Push</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>Deep Linking</strong>
+          <small>Navigation</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>WebSockets</strong>
+          <small>Real-time</small>
+        </div>
+
+        <div class="skill-chip" data-category="mobile">
+          <span class="chip-dot"></span>
+          <strong>MQTT</strong>
+          <small>Real-time</small>
+        </div>
+
+
+        <!-- =========================
+       WEB
+       ========================= -->
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>React.js</strong>
+          <small>Primary</small>
+        </div>
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>Vite</strong>
+          <small>Build</small>
+        </div>
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>Responsive Web Design</strong>
+          <small>UI</small>
+        </div>
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>Web Accessibility</strong>
+          <small>A11y</small>
+        </div>
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>Browser APIs</strong>
+          <small>Web</small>
+        </div>
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>SEO</strong>
+          <small>Web</small>
+        </div>
+
+        <div class="skill-chip" data-category="web">
+          <span class="chip-dot"></span>
+          <strong>Web Performance</strong>
+          <small>Performance</small>
+        </div>
+
+
+        <!-- =========================
+       BACKEND
+       ========================= -->
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>Node.js</strong>
+          <small>Runtime</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>NestJS</strong>
+          <small>Backend</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>Express</strong>
+          <small>Backend</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>REST APIs</strong>
+          <small>Networking</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>GraphQL</strong>
+          <small>API</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>Prisma</strong>
+          <small>ORM</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>Authentication</strong>
+          <small>Security</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>Authorization</strong>
+          <small>Security</small>
+        </div>
+
+        <div class="skill-chip" data-category="backend">
+          <span class="chip-dot"></span>
+          <strong>API Design</strong>
+          <small>Architecture</small>
+        </div>
+
+
+        <!-- =========================
+       DATA & CLOUD
+       ========================= -->
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>MySQL</strong>
+          <small>Database</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>MongoDB</strong>
+          <small>Database</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>SQLite</strong>
+          <small>Database</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>Supabase</strong>
+          <small>Backend</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>Docker</strong>
+          <small>Containers</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>AWS</strong>
+          <small>Cloud</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>Azure</strong>
+          <small>Cloud</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>Git & GitHub</strong>
+          <small>VCS</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>GitHub Actions</strong>
+          <small>CI/CD</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>npm</strong>
+          <small>Packages</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>App Store Publishing</strong>
+          <small>Release</small>
+        </div>
+
+        <div class="skill-chip" data-category="data-cloud">
+          <span class="chip-dot"></span>
+          <strong>Play Store Publishing</strong>
+          <small>Release</small>
+        </div>
+
+
+        <!-- =========================
+       ENGINEERING
+       ========================= -->
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Clean Architecture</strong>
+          <small>Architecture</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>SOLID Principles</strong>
+          <small>Core Rules</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Design Patterns</strong>
+          <small>Architecture</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Monorepo Architecture</strong>
+          <small>Systems</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Modular Architecture</strong>
+          <small>Systems</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Offline-first</strong>
+          <small>Mobile</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Real-time Architecture</strong>
+          <small>Systems</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Performance Optimization</strong>
+          <small>Performance</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>CI/CD</strong>
+          <small>Delivery</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Jest</strong>
+          <small>Testing</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Playwright</strong>
+          <small>E2E</small>
+        </div>
+
+        <div class="skill-chip" data-category="engineering">
+          <span class="chip-dot"></span>
+          <strong>Regression Testing</strong>
+          <small>Quality</small>
+        </div>
+
+
+        <!-- =========================
+       AI & TOOLING
+       ========================= -->
+
+        <div class="skill-chip" data-category="ai">
+          <span class="chip-dot"></span>
+          <strong>Claude</strong>
+          <small>AI</small>
+        </div>
+
+        <div class="skill-chip" data-category="ai">
+          <span class="chip-dot"></span>
+          <strong>GitHub Copilot</strong>
+          <small>AI</small>
+        </div>
+
+        <div class="skill-chip" data-category="ai">
+          <span class="chip-dot"></span>
+          <strong>Cursor</strong>
+          <small>AI IDE</small>
+        </div>
+
+        <div class="skill-chip" data-category="ai">
+          <span class="chip-dot"></span>
+          <strong>LLM APIs</strong>
+          <small>AI</small>
+        </div>
+
+        <div class="skill-chip" data-category="ai">
+          <span class="chip-dot"></span>
+          <strong>MCP</strong>
+          <small>Tooling</small>
+        </div>
+
+        <div class="skill-chip" data-category="ai">
+          <span class="chip-dot"></span>
+          <strong>AI-assisted Development</strong>
+          <small>Workflow</small>
+        </div>
+
+      </div>
+
+      <!-- ENGINEERING STANDARDS -->
+      <div class="engineering-summary reveal">
+
+        <div class="engineering-summary-block">
+
+          <div class="summary-heading">
+            <span class="summary-icon">◇</span>
+            <span>ARCHITECTURAL STANDARDS</span>
+          </div>
+
+          <div class="summary-grid">
+
+            <div>
+              <span class="summary-check">✓</span>
+              Clean Architecture
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              SOLID Principles
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              Design Patterns
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              Modular Architecture
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              API-first Design
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              Real-time Systems
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="engineering-summary-block">
+
+          <div class="summary-heading">
+            <span class="summary-icon">◉</span>
+            <span>TESTING & DELIVERY PIPELINES</span>
+          </div>
+
+          <div class="summary-grid">
+
+            <div>
+              <span class="summary-check">✓</span>
+              Jest Testing
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              Playwright E2E
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              Regression Testing
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              CI/CD Pipelines
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              GitHub Actions
+            </div>
+
+            <div>
+              <span class="summary-check">✓</span>
+              App Store Releases
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="skills-matrix-footer reveal">
+        <span>PRIMARY FOCUS</span>
+        <strong>Mobile Engineering → Full-Stack → AI Engineering</strong>
       </div>
     </section>
 
     <section class="section ai-section" id="ai">
+
       <div class="section-heading reveal">
-        <p class="eyebrow">AI IN DEVELOPMENT</p>
-        <h2>Leveraging AI<br><em>for better engineering.</em></h2>
+        <p class="eyebrow">06 / AI IN DEVELOPMENT</p>
+
+        <h2>
+          Using AI as an<br>
+          <em>engineering multiplier.</em>
+        </h2>
       </div>
+
+      <p class="ai-intro reveal">
+        I use AI to accelerate development, investigate technical problems,
+        improve engineering decisions and explore practical product ideas —
+        while keeping architecture, quality and final decisions human-led.
+      </p>
+
+
+      <!-- =====================================================
+       AI CAPABILITIES
+       ===================================================== -->
+
       <div class="ai-grid">
+
+
+        <!-- AI-ASSISTED DEVELOPMENT -->
+
         <article class="ai-card reveal">
-          <h3>Code Generation & Refactoring</h3>
-          <p>Using GitHub Copilot, Cursor, and Claude to accelerate development, improve code quality, and architect complex systems efficiently.</p>
-          <div class="ai-tags"><span>GitHub Copilot</span><span>Cursor</span><span>Claude</span><span>TypeScript</span></div>
+
+          <div class="ai-card-top">
+            <span class="ai-card-number">01</span>
+
+            <span class="ai-card-icon">&lt;/&gt;</span>
+          </div>
+
+          <h3>AI-Assisted Development</h3>
+
+          <p>
+            Using AI coding tools to speed up implementation, refactoring
+            and repetitive development work across React Native, React.js,
+            JavaScript and TypeScript projects.
+          </p>
+
+          <div class="ai-tags">
+            <span>GitHub Copilot</span>
+            <span>Cursor</span>
+            <span>Claude</span>
+            <span>TypeScript</span>
+          </div>
+
         </article>
+
+
+        <!-- ENGINEERING & DEBUGGING -->
+
         <article class="ai-card reveal">
-          <h3>Problem Solving & Architecture</h3>
-          <p>Leveraging AI for technical analysis, design decisions, and navigating complex architectural trade-offs in React Native and backend systems.</p>
-          <div class="ai-tags"><span>Architecture Design</span><span>Debugging</span><span>Documentation</span><span>Analysis</span></div>
+
+          <div class="ai-card-top">
+            <span class="ai-card-number">02</span>
+
+            <span class="ai-card-icon">◇</span>
+          </div>
+
+          <h3>Engineering & Debugging</h3>
+
+          <p>
+            Using AI to investigate bugs, understand unfamiliar code,
+            compare implementation approaches and reason through
+            architecture and technical trade-offs.
+          </p>
+
+          <div class="ai-tags">
+            <span>Debugging</span>
+            <span>Architecture</span>
+            <span>Refactoring</span>
+            <span>Code Analysis</span>
+          </div>
+
         </article>
+
+
+        <!-- MOBILE & PRODUCT EXPLORATION -->
+
         <article class="ai-card reveal">
-          <h3>Learning & Knowledge Synthesis</h3>
-          <p>Staying current with new technologies, frameworks, and best practices through AI-assisted exploration and documentation.</p>
-          <div class="ai-tags"><span>Technical Learning</span><span>Best Practices</span><span>Frameworks</span><span>Exploration</span></div>
+
+          <div class="ai-card-top">
+            <span class="ai-card-number">03</span>
+
+            <span class="ai-card-icon">✦</span>
+          </div>
+
+          <h3>Mobile & Product Exploration</h3>
+
+          <p>
+            Exploring where AI can create useful product experiences in
+            mobile and web applications, from user workflows and feature
+            ideas to technical feasibility and implementation planning.
+          </p>
+
+          <div class="ai-tags">
+            <span>Mobile AI</span>
+            <span>Product Ideas</span>
+            <span>Technical Research</span>
+            <span>Prototyping</span>
+          </div>
+
         </article>
+
       </div>
+
+
+      <!-- =====================================================
+       AI WORKFLOW
+       ===================================================== -->
+
+      <div class="ai-workflow reveal">
+
+        <div class="ai-workflow-heading">
+          <span class="ai-workflow-icon">↗</span>
+
+          <div>
+            <small>HOW I USE AI</small>
+            <strong>AI supports the workflow — it doesn't replace engineering judgment.</strong>
+          </div>
+        </div>
+
+        <div class="ai-workflow-steps">
+
+          <div class="ai-workflow-step">
+            <span>01</span>
+            <strong>Understand</strong>
+            <p>Requirements & problem</p>
+          </div>
+
+          <i>→</i>
+
+          <div class="ai-workflow-step">
+            <span>02</span>
+            <strong>Explore</strong>
+            <p>Ideas & approaches</p>
+          </div>
+
+          <i>→</i>
+
+          <div class="ai-workflow-step">
+            <span>03</span>
+            <strong>Build</strong>
+            <p>Implement & refactor</p>
+          </div>
+
+          <i>→</i>
+
+          <div class="ai-workflow-step">
+            <span>04</span>
+            <strong>Validate</strong>
+            <p>Test & review</p>
+          </div>
+
+        </div>
+
+      </div>
+
     </section>
 
     <section class="section writing-section" id="writing">
@@ -357,54 +1305,57 @@
         <h2>Thinking in public<br><em>about engineering.</em></h2>
       </div>
       <div class="writing-list">
-       <article class="writing-item reveal">
-  <div class="writing-header">
-    <span class="writing-number">01</span>
+        <article class="writing-item reveal">
+          <div class="writing-header">
+            <span class="writing-number">01</span>
 
-    <div class="writing-meta">
-      <small>AI / MOBILE DEVELOPMENT</small>
+            <div class="writing-meta">
+              <small>AI / MOBILE DEVELOPMENT</small>
 
-      <h3>
-        Building AI Into Mobile Apps in 2026: A Practical Framework for Creating Real Product Value
-      </h3>
+              <h3>
+                Building AI Into Mobile Apps in 2026: A Practical Framework for Creating Real Product Value
+              </h3>
 
-      <p class="writing-excerpt">
-        A practical framework for integrating AI into mobile applications by starting with user friction, choosing the right AI architecture, and measuring meaningful product outcomes instead of simply adding AI features.
-      </p>
+              <p class="writing-excerpt">
+                A practical framework for integrating AI into mobile applications by starting with user friction,
+                choosing the right AI architecture, and measuring meaningful product outcomes instead of simply adding
+                AI features.
+              </p>
 
-      <div class="writing-tags">
-        <span>Artificial Intelligence</span>
-        <span>Mobile AI</span>
-        <span>On-Device AI</span>
-        <span>Cloud AI</span>
-        <span>Product Strategy</span>
-        <span>React Native</span>
-      </div>
+              <div class="writing-tags">
+                <span>Artificial Intelligence</span>
+                <span>Mobile AI</span>
+                <span>On-Device AI</span>
+                <span>Cloud AI</span>
+                <span>Product Strategy</span>
+                <span>React Native</span>
+              </div>
 
-      <p class="writing-date">Published September 4, 2026</p>
-    </div>
+              <p class="writing-date">Published September 4, 2026</p>
+            </div>
 
-    <a
-      href="https://www.linkedin.com/pulse/building-ai-mobile-apps-2026-framework-feature-list-amit-kumar-pandya-mpipf/"
-      target="_blank"
-      rel="noreferrer"
-      class="writing-link"
-    >
-      Read Article <span>↗</span>
-    </a>
-  </div>
-</article>
+            <a href="https://www.linkedin.com/pulse/building-ai-mobile-apps-2026-framework-feature-list-amit-kumar-pandya-mpipf/"
+              target="_blank" rel="noreferrer" class="writing-link">
+              Read Article <span>↗</span>
+            </a>
+          </div>
+        </article>
         <article class="writing-item reveal">
           <div class="writing-header">
             <span class="writing-number">01</span>
             <div class="writing-meta">
               <small>REACT NATIVE / ARCHITECTURE</small>
               <h3>React Native vs Flutter in 2026 — A Practical Engineering Perspective</h3>
-              <p class="writing-excerpt">A technical comparison of two leading cross-platform mobile frameworks, examining architectural approaches, performance characteristics, and practical guidance for engineering teams.</p>
-              <div class="writing-tags"><span>React Native</span><span>Flutter</span><span>Architecture</span><span>Performance</span><span>Cross-platform</span></div>
+              <p class="writing-excerpt">A technical comparison of two leading cross-platform mobile frameworks,
+                examining architectural approaches, performance characteristics, and practical guidance for engineering
+                teams.</p>
+              <div class="writing-tags"><span>React
+                  Native</span><span>Flutter</span><span>Architecture</span><span>Performance</span><span>Cross-platform</span>
+              </div>
               <p class="writing-date">Published March 14, 2026</p>
             </div>
-            <a href="https://www.linkedin.com/pulse/react-native-vs-flutter-2026-practical-engineering-amit-kumar-pandya-ywjpc" target="_blank" rel="noreferrer" class="writing-link">Read Article <span>↗</span></a>
+            <a href="https://www.linkedin.com/pulse/react-native-vs-flutter-2026-practical-engineering-amit-kumar-pandya-ywjpc"
+              target="_blank" rel="noreferrer" class="writing-link">Read Article <span>↗</span></a>
           </div>
         </article>
         <article class="writing-item reveal">
@@ -413,26 +1364,134 @@
             <div class="writing-meta">
               <small>SECURITY / MOBILE</small>
               <h3>Integrating Biometric Authentication in React Native</h3>
-              <p class="writing-excerpt">A practical guide to implementing Face ID and fingerprint authentication in React Native, covering architectural decisions, security frameworks, and real-world production challenges.</p>
-              <div class="writing-tags"><span>React Native</span><span>Biometrics</span><span>Security</span><span>Authentication</span><span>iOS / Android</span></div>
+              <p class="writing-excerpt">A practical guide to implementing Face ID and fingerprint authentication in
+                React Native, covering architectural decisions, security frameworks, and real-world production
+                challenges.</p>
+              <div class="writing-tags"><span>React
+                  Native</span><span>Biometrics</span><span>Security</span><span>Authentication</span><span>iOS /
+                  Android</span></div>
               <p class="writing-date">Published February 23, 2026</p>
             </div>
-            <a href="https://www.linkedin.com/pulse/integrating-biometric-authentication-react-native-face-pandya-0wsuc" target="_blank" rel="noreferrer" class="writing-link">Read Article <span>↗</span></a>
+            <a href="https://www.linkedin.com/pulse/integrating-biometric-authentication-react-native-face-pandya-0wsuc"
+              target="_blank" rel="noreferrer" class="writing-link">Read Article <span>↗</span></a>
           </div>
         </article>
       </div>
     </section>
 
     <section class="section contact-section" id="contact">
-      <div class="contact-panel reveal">
+      <div class="section-heading reveal">
         <p class="eyebrow">07 / CONTACT</p>
         <h2>Let's build<br><em>something useful.</em></h2>
-        <p>Open to conversations around React Native, mobile architecture, engineering problems and interesting software projects.</p>
-        <div class="contact-actions">
-          <a class="primary-btn" href="https://www.linkedin.com/in/amit-kumar-pandya-258699120" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a>
-          <a class="secondary-btn" href="https://github.com/amit13091992" target="_blank" rel="noreferrer">View GitHub ↗</a>
-        </div>
       </div>
+
+      <div class="contact-layout">
+
+        <!-- Contact Information -->
+        <div class="contact-info reveal">
+
+          <div class="contact-info-header">
+            <span class="contact-kicker">GET IN TOUCH</span>
+            <p>
+              Have an interesting project, engineering problem,
+              or collaboration idea? I'd love to hear from you.
+            </p>
+          </div>
+
+          <a class="contact-info-item" href="mailto:amit13091992@gmail.com">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z" stroke="currentColor"
+                  stroke-width="1.8" />
+                <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </span>
+
+            <span class="contact-info-content">
+              <small>EMAIL</small>
+              <strong>amit13091992@gmail.com</strong>
+            </span>
+          </a>
+
+          <a class="contact-info-item" href="tel:+919177302468">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6.6 3.5h2.2c.5 0 .9.3 1 .8l1 3.4c.1.4 0 .8-.3 1.1L9 10.4a15.4 15.4 0 0 0 4.6 4.6l1.6-1.5c.3-.3.7-.4 1.1-.3l3.4 1c.5.1.8.5.8 1v2.2c0 .6-.4 1-1 1C11.5 18.4 5.6 12.5 5.6 5.5c0-.6.4-1 1-1Z"
+                  stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </span>
+
+            <span class="contact-info-content">
+              <small>PHONE</small>
+              <strong>+91 9177302468</strong>
+            </span>
+          </a>
+
+          <div class="contact-info-item contact-location">
+            <span class="contact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.8" />
+                <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            </span>
+
+            <span class="contact-info-content">
+              <small>LOCATION</small>
+              <strong>Hyderabad, India</strong>
+            </span>
+          </div>
+
+          <div class="contact-socials">
+            <span>CONNECT</span>
+
+            <a href="https://github.com/amit13091992" target="_blank" rel="noreferrer">
+              GitHub ↗
+            </a>
+
+            <a href="https://www.linkedin.com/in/amit-kumar-pandya-258699120" target="_blank" rel="noreferrer">
+              LinkedIn ↗
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm">
+
+          <div class="form-field">
+            <label for="contactName">Name</label>
+            <input id="contactName" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+          </div>
+
+          <div class="form-field">
+            <label for="contactEmail">Email</label>
+            <input id="contactEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email"
+              required />
+          </div>
+
+          <div class="form-field">
+            <label for="contactSubject">Subject</label>
+            <input id="contactSubject" name="subject" type="text" placeholder="How can I help?" required />
+          </div>
+
+          <div class="form-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="6"
+              placeholder="Tell me about your project or opportunity..." required></textarea>
+          </div>
+
+          <button class="contact-submit" type="submit">
+            Send Message
+            <span>↗</span>
+          </button>
+
+          <p class="contact-form-status" id="contactFormStatus" role="status" aria-live="polite"></p>
+
+        </form>
+      </div>
+
       <footer>
         <span>© <span id="year"></span> Amit Kumar Pandya</span>
         <span>React Native · TypeScript · Engineering</span>
@@ -448,4 +1507,5 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
