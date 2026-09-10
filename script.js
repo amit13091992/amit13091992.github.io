@@ -828,78 +828,46 @@
           '========== CONTACT FORM SUBMIT =========='
         );
 
-        // Browser-level validation
-        if (!contactForm.checkValidity()) {
-          console.warn(
-            'Browser validation failed'
-          );
+        /*
+         * Get fields directly by ID.
+         * This avoids FormData/name-attribute issues.
+         */
 
-          contactForm.reportValidity();
-          return;
-        }
+        const nameInput =
+          document.getElementById('contactName');
 
-        const submitButton =
-          contactForm.querySelector(
-            '.contact-submit'
-          );
+        const emailInput =
+          document.getElementById('contactEmail');
 
-        const formData =
-          new FormData(contactForm);
+        const subjectInput =
+          document.getElementById('contactSubject');
 
-        // Read values
-        const name =
-          formData.get('name')?.toString().trim() ||
-          '';
+        const messageInput =
+          document.getElementById('contactMessage');
 
-        const email =
-          formData.get('email')?.toString().trim() ||
-          '';
+        console.log('Input elements:', {
+          nameInput,
+          emailInput,
+          subjectInput,
+          messageInput
+        });
 
-        const subject =
-          formData.get('subject')?.toString().trim() ||
-          '';
+        /*
+         * Make sure all input elements exist
+         */
 
-        const message =
-          formData.get('message')?.toString().trim() ||
-          '';
-
-        // DEBUG LOG
-        console.log(
-          'Form values:',
-          {
-            name,
-            nameLength: name.length,
-
-            email,
-            emailLength: email.length,
-
-            subject,
-            subjectLength: subject.length,
-
-            message,
-            messageLength: message.length
-          }
-        );
-
-        // Make sure all values were captured
         if (
-          !name ||
-          !email ||
-          !subject ||
-          !message
+          !nameInput ||
+          !emailInput ||
+          !subjectInput ||
+          !messageInput
         ) {
           console.error(
-            'Frontend validation failed:',
-            {
-              name,
-              email,
-              subject,
-              message
-            }
+            'Contact form input element is missing.'
           );
 
           contactFormStatus.textContent =
-            'Please complete all fields correctly.';
+            'Contact form configuration error.';
 
           contactFormStatus.className =
             'contact-form-status error';
@@ -907,10 +875,75 @@
           return;
         }
 
-        // Additional validation
-        if (name.length < 2) {
+        /*
+         * Read values directly
+         */
+
+        const name =
+          nameInput.value.trim();
+
+        const email =
+          emailInput.value.trim();
+
+        const subject =
+          subjectInput.value.trim();
+
+        const message =
+          messageInput.value.trim();
+
+        /*
+         * DEBUG
+         */
+
+        console.log(
+          '========== FORM VALUES =========='
+        );
+
+        console.log('Name:', name);
+        console.log(
+          'Name length:',
+          name.length
+        );
+
+        console.log('Email:', email);
+        console.log(
+          'Email length:',
+          email.length
+        );
+
+        console.log('Subject:', subject);
+        console.log(
+          'Subject length:',
+          subject.length
+        );
+
+        console.log('Message:', message);
+        console.log(
+          'Message length:',
+          message.length
+        );
+
+        /*
+         * Browser validation
+         */
+
+        if (!contactForm.checkValidity()) {
           console.warn(
-            'Name is too short'
+            'Browser validation failed.'
+          );
+
+          contactForm.reportValidity();
+
+          return;
+        }
+
+        /*
+         * Basic validation
+         */
+
+        if (!name) {
+          console.warn(
+            'Name is empty.'
           );
 
           contactFormStatus.textContent =
@@ -919,12 +952,30 @@
           contactFormStatus.className =
             'contact-form-status error';
 
+          nameInput.focus();
+
           return;
         }
 
-        if (subject.length < 2) {
+        if (!email) {
           console.warn(
-            'Subject is too short'
+            'Email is empty.'
+          );
+
+          contactFormStatus.textContent =
+            'Please enter your email.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          emailInput.focus();
+
+          return;
+        }
+
+        if (!subject) {
+          console.warn(
+            'Subject is empty.'
           );
 
           contactFormStatus.textContent =
@@ -933,26 +984,74 @@
           contactFormStatus.className =
             'contact-form-status error';
 
+          subjectInput.focus();
+
+          return;
+        }
+
+        if (!message) {
+          console.warn(
+            'Message is empty.'
+          );
+
+          contactFormStatus.textContent =
+            'Please enter a message.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          messageInput.focus();
+
+          return;
+        }
+
+        /*
+         * Minimum length validation
+         */
+
+        if (name.length < 2) {
+          contactFormStatus.textContent =
+            'Please enter your full name.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          nameInput.focus();
+
+          return;
+        }
+
+        if (subject.length < 2) {
+          contactFormStatus.textContent =
+            'Please enter a subject.';
+
+          contactFormStatus.className =
+            'contact-form-status error';
+
+          subjectInput.focus();
+
           return;
         }
 
         if (message.length < 5) {
-          console.warn(
-            'Message is too short'
-          );
-
           contactFormStatus.textContent =
             'Please enter a longer message.';
 
           contactFormStatus.className =
             'contact-form-status error';
 
+          messageInput.focus();
+
           return;
         }
 
         console.log(
-          'Frontend validation passed.'
+          '✅ Frontend validation passed.'
         );
+
+        /*
+         * Payload
+         */
 
         const payload = {
           name,
@@ -962,15 +1061,24 @@
         };
 
         console.log(
-          'Sending payload to Worker:',
-          payload
+          '========== PAYLOAD =========='
         );
 
-        // Disable button
-        submitButton.disabled = true;
+        console.log(payload);
+
+        /*
+         * Button state
+         */
+
+        const submitButton =
+          contactForm.querySelector(
+            '.contact-submit'
+          );
 
         const originalButtonText =
           submitButton.innerHTML;
+
+        submitButton.disabled = true;
 
         submitButton.innerHTML =
           'Sending... <span>↗</span>';
@@ -981,9 +1089,17 @@
         contactFormStatus.className =
           'contact-form-status';
 
+        /*
+         * Send to Cloudflare Worker
+         */
+
         try {
           console.log(
-            'Calling Worker:',
+            '========== CALLING WORKER =========='
+          );
+
+          console.log(
+            'Endpoint:',
             CONTACT_ENDPOINT
           );
 
@@ -1004,7 +1120,7 @@
             );
 
           console.log(
-            'Worker response status:',
+            'Worker HTTP status:',
             response.status
           );
 
@@ -1013,13 +1129,15 @@
             response.ok
           );
 
-          // Read response as text first.
-          // This helps us debug non-JSON responses too.
+          /*
+           * Read response
+           */
+
           const responseText =
             await response.text();
 
           console.log(
-            'Worker response body:',
+            'Worker response:',
             responseText
           );
 
@@ -1030,10 +1148,14 @@
               JSON.parse(responseText);
           } catch (parseError) {
             console.error(
-              'Could not parse Worker response as JSON:',
+              'Response is not valid JSON:',
               parseError
             );
           }
+
+          /*
+           * Worker returned an error
+           */
 
           if (!response.ok) {
             throw new Error(
@@ -1042,8 +1164,12 @@
             );
           }
 
+          /*
+           * Success
+           */
+
           console.log(
-            'Contact form successfully sent.'
+            '🎉 Message successfully accepted by Worker.'
           );
 
           contactFormStatus.textContent =
@@ -1055,12 +1181,12 @@
           contactForm.reset();
 
         } catch (error) {
+
           console.error(
             '========== CONTACT FORM ERROR =========='
           );
 
           console.error(
-            'Error:',
             error
           );
 
@@ -1076,6 +1202,7 @@
             'contact-form-status error';
 
         } finally {
+
           submitButton.disabled = false;
 
           submitButton.innerHTML =
