@@ -110,10 +110,11 @@ button {
 }
 
 .brand-mark {
-  font-weight: 900;
-  font-size: 20px;
-  letter-spacing: -2px;
-  color: var(--orange);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
 .brand-copy {
