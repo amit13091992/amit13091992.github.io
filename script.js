@@ -21,6 +21,29 @@
 
     if (!loader) return;
 
+    /*
+     * Only run the full boot animation on a visitor's first
+     * page load this session. Repeat visits (reloads, in-page
+     * navigation) skip straight to the portfolio.
+     */
+    let alreadySeen = false;
+    try {
+      alreadySeen = sessionStorage.getItem('amit-boot-seen') === '1';
+    } catch (err) {
+      alreadySeen = false;
+    }
+
+    if (alreadySeen) {
+      loader.remove();
+      return;
+    }
+
+    try {
+      sessionStorage.setItem('amit-boot-seen', '1');
+    } catch (err) {
+      /* ignore, e.g. storage disabled */
+    }
+
     const progressBar = document.getElementById('portfolioLoaderBar');
     const progressPercent = document.getElementById('portfolioLoaderPercent');
     const progressMessage = document.getElementById('portfolioLoaderMessage');
@@ -62,13 +85,13 @@
      * but don't block the portfolio unnecessarily.
      */
     const startTime = performance.now();
-    const minimumDisplayTime = 1300;
+    const minimumDisplayTime = 500;
 
     const runLoader = () => {
       updateMessage(0);
 
       const interval = setInterval(() => {
-        progress += Math.random() * 10 + 5;
+        progress += Math.random() * 22 + 14;
 
         if (progress >= 100) {
           progress = 100;
@@ -155,11 +178,13 @@
   menuBtn.addEventListener('click', () => {
     const open = mobileMenu.classList.toggle('open');
     menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     menuBtn.textContent = open ? '×' : '☰';
   });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
     menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'Open menu');
     menuBtn.textContent = '☰';
   }));
 
